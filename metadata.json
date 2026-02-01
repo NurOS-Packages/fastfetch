@@ -1,0 +1,22 @@
+{
+  "name": "fastfetch",
+  "version": "2.33.0",
+  "type": "binary",
+  "architecture": "x86_64",
+  "description": "Fastfetch - быстрая утилита для вывода системной информации с поддержкой NurOS",
+  "maintainer": "AnmiTaliDev <anmitali198@gmail.com>",
+  "license": "MIT",
+  "tags": [
+    "system",
+    "info",
+    "cli",
+    "neofetch",
+    "nuros"
+  ],
+  "homepage": "https://github.com/fastfetch-cli/fastfetch",
+  "dependencies": [],
+  "conflicts": [],
+  "provides": [],
+  "replaces": [],
+  "conf": []
+}
