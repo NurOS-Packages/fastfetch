@@ -1,3 +1,6 @@
+# APGer Recipe Template for NurOS Packages
+# Fastfetch - быстрая утилита для вывода системной информации
+
 package:
   name: "fastfetch"
   version: "2.33.0"
@@ -27,6 +30,7 @@ build:
       -DCMAKE_BUILD_TYPE=Release \
       -DENABLE_SYSTEM_YYJSON=OFF
     make -j$(nproc)
+    cd ..
 
 install:
   script: "cd build && make DESTDIR=\"$DESTDIR\" install"
