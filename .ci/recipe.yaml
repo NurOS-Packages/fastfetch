@@ -29,6 +29,4 @@ build:
     make -j$(nproc)
 
 install:
-  script: |
-    cd build
-    make DESTDIR="$DESTDIR" install
+  script: "cd build && make DESTDIR=\"$DESTDIR\" install"
