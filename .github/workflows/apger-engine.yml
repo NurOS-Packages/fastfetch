@@ -162,30 +162,21 @@ jobs:
             cp -r "$APG_ROOT/scripts" .
           fi
 
-          # Commit and push with retry
+          # Commit and push
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "Deploy package ${{ env.PACKAGE_NAME }} v${{ env.PACKAGE_VERSION }}" || echo "No changes to commit"
           
-          # Retry push with pull if rejected (5 attempts with 60 second delay)
-          MAX_RETRIES=5
-          for i in $(seq 1 $MAX_RETRIES); do
-            echo "Push attempt $i/$MAX_RETRIES"
-            if git push origin main; then
-              echo "Push successful!"
-              exit 0
-            else
-              if [ $i -lt $MAX_RETRIES ]; then
-                echo "Push failed. Pulling changes and retrying in 60 seconds..."
-                git pull --rebase origin main
-                sleep 60
-              else
-                echo "Push failed after $MAX_RETRIES attempts"
-                exit 1
-              fi
-            fi
-          done
+          # Try normal push twice, then force
+          if git push origin main; then
+            echo "Push successful on first attempt"
+          elif git pull --rebase origin main && git push origin main; then
+            echo "Push successful on second attempt after rebase"
+          else
+            echo "Normal push failed twice, forcing push"
+            git push --force origin main
+          fi
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
