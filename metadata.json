@@ -1,9 +1,9 @@
 {
   "name": "fastfetch",
-  "version": "2.35.0",
+  "version": "2.39.0",
   "type": "binary",
   "architecture": "x86_64",
-  "description": "Fastfetch - быстрая утилита для вывода системной информации с поддержкой NurOS",
+  "description": "Fast system information tool",
   "maintainer": "AnmiTaliDev <anmitali198@gmail.com>",
   "license": "MIT",
   "tags": [
