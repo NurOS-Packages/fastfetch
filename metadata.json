@@ -1,6 +1,6 @@
 {
   "name": "fastfetch",
-  "version": "2.36.1",
+  "version": "2.37.0",
   "type": "binary",
   "architecture": "x86_64",
   "description": "Fast system information tool with NurOS support",
