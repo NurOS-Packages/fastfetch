@@ -1,9 +1,9 @@
 {
   "name": "fastfetch",
-  "version": "2.45.0",
+  "version": "2.46.0",
   "type": "binary",
   "architecture": "x86_64",
-  "description": "Fast system information tool with NurOS support",
+  "description": "Fast system information tool",
   "maintainer": "APGer <anmitali198@gmail.com>",
   "license": "MIT",
   "tags": [
